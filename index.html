@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Tunify — Sua música, seu jeito</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+
+	<div class="sidebar">
+		<div class="sidebar-wraper">
+
+			<div class="sidebar_logo">
+				<span class="logo-text">tunify</span>
+			</div>
+
+			<div class="sidebar_menu">
+				<a class="sidebar_menu_selecionado" href="#"><i class="fas fa-home"></i>Início</a>
+				<a href="#"><i class="fas fa-search"></i>Buscar</a>
+				<a href="#"><i class="fas fa-database"></i>Biblioteca</a>
+			</div>
+
+			<div class="sidebar_menu">
+				<p class="sidebar_menu_title">PLAYLISTS</p>
+
+				<div class="sidebar_menu_item">
+					<div class="sidebar_menu_item_componente">
+						<span>+</span>
+					</div>
+					<span>Criar playlist</span>
+				</div>
+
+				<div class="sidebar_menu_item">
+					<i class="fas fa-heart sidebar_heart_icon"></i>
+					<span>Músicas Curtidas</span>
+				</div>
+			</div>
+
+			<div class="sidebar_playlists">
+				<a href="#">Eletrônica</a>
+				<a href="#">Funk</a>
+				<a href="#">Pagode</a>
+				<a href="#">Sertanejo</a>
+				<a href="#">Rap</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="main-wraper">
+
+			<div class="main_row">
+				<div class="main_row_title"><h2>Paradas</h2></div>
+
+				<div class="main_col">
+					<div class="main_col_img placeholder-img"><i class="fas fa-music"></i></div>
+					<h3>As 50 mais tocadas</h3>
+					<p>Aqui vai a descrição da minha música</p>
+				</div>
+
+				<div class="main_col">
+					<div class="main_col_img placeholder-img"><i class="fas fa-globe"></i></div>
+					<h3>Top Global</h3>
+					<p>Aqui vai a descrição da minha música</p>
+				</div>
+
+				<div class="main_col">
+					<div class="main_col_img placeholder-img"><i class="fas fa-fire"></i></div>
+					<h3>Em alta</h3>
+					<p>Aqui vai a descrição da minha música</p>
+				</div>
+
+				<div class="main_col">
+					<div class="main_col_img placeholder-img"><i class="fas fa-star"></i></div>
+					<h3>Favoritas</h3>
+					<p>Aqui vai a descrição da minha música</p>
+				</div>
+			</div>
+
+			<div class="main_row">
+				<div class="main_row_title"><h2>Minhas músicas</h2></div>
+
+				<div class="main_col playable"
+					data-artist="Guns N' Roses"
+					data-song="Sweet Child O' Mine"
+					data-file="assets/musica.mp3"
+					data-icon="fa-guitar">
+					<div class="main_col_img playable-img"><i class="fas fa-guitar"></i></div>
+					<h3>Guns N' Roses</h3>
+					<p>Sweet Child O' Mine</p>
+				</div>
+
+				<div class="main_col playable"
+					data-artist="Rocky Balboa"
+					data-song="Gonna Fly Now"
+					data-file="assets/musica.mp3"
+					data-icon="fa-flag-checkered">
+					<div class="main_col_img playable-img"><i class="fas fa-flag-checkered"></i></div>
+					<h3>Rocky Balboa</h3>
+					<p>Gonna Fly Now</p>
+				</div>
+
+				<div class="main_col playable"
+					data-artist="Tunify Sessions"
+					data-song="Faixa Demo"
+					data-file="assets/musica.mp3"
+					data-icon="fa-compact-disc">
+					<div class="main_col_img playable-img"><i class="fas fa-compact-disc"></i></div>
+					<h3>Tunify Sessions</h3>
+					<p>Faixa Demo</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- PLAYER -->
+	<div class="player" id="player">
+		<div class="player_track-info">
+			<div class="player_track-icon" id="playerIcon"><i class="fas fa-music"></i></div>
+			<div class="player_track-text">
+				<span class="player_track-song" id="playerSong">Nenhuma música selecionada</span>
+				<span class="player_track-artist" id="playerArtist">—</span>
+			</div>
+		</div>
+
+		<div class="player_control">
+			<div class="player_control_buttons">
+				<a href="#" id="btnPrev"><i class="fas fa-step-backward"></i></a>
+				<a href="#" id="btnPlay" class="btn-play"><i class="fas fa-play"></i></a>
+				<a href="#" id="btnNext"><i class="fas fa-step-forward"></i></a>
+			</div>
+
+			<div class="player_control_progress-row">
+				<span class="player_time" id="timeAtual">0:00</span>
+				<div class="player_control_progress" id="progressBar">
+					<div class="player_control_progress_fill" id="progressFill"></div>
+				</div>
+				<span class="player_time" id="timeTotal">0:00</span>
+			</div>
+		</div>
+
+		<div class="player_volume">
+			<i class="fas fa-volume-up"></i>
+			<input type="range" id="volumeSlider" min="0" max="100" value="80">
+		</div>
+	</div>
+
+	<audio id="audioPlayer"></audio>
+
+	<script src="js/player.js"></script>
+</body>
+</html>
